@@ -1,0 +1,51 @@
+
+
+#order-form {
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  #order-form {
+    padding: 1rem;
+  }
+
+  .container, .row, .col-md-8 {
+    padding: 0 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+}
+
+input.form-control,
+select.form-control {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  transition: border-color 0.2s;
+}
+
+input.form-control:focus,
+select.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+}
