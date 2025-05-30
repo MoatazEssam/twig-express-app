@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "twig": "^1.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0",
+    "browser-sync": "^2.29.0",
+    "concurrently": "^8.2.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run browser-sync\"",
+    "server": "NODE_ENV=development nodemon --ext js,json,twig --ignore public/ server.js",
+    "browser-sync": "browser-sync start --proxy localhost:3000 --files 'public/css/*.css' --reload-delay 1000 --no-open",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  }
+}
