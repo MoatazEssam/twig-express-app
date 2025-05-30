@@ -1,8 +1,26 @@
+<section class="sec">
+  {% if newOrderText %}
+    <div class="container">
+      <div id="welcome-box" class="well {% if site['rtl'] %} rtl-content {% endif %}">
+        <dotlottie-player
+          src="https://lottie.host/7edf51d7-65d2-4452-ab19-9061582fa598/5Cx48qGEmb.lottie"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+        ></dotlottie-player>
+
+        <div class="welcome-text">
+          {{ newOrderText }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
 <div class="container">
-  <div class="row">
+  <div class="row animate__animated animate__fadeInUp"  >
     <div class="col-md-8 col-md-offset-2">
-      <div class="well"  data-aos="fade-up">
-        <form {% if site['rtl'] %} class="rtl-form   animate__animated animate__fadeInUp"{% endif %} action="{{ page['url'] }}" method="post" id="order-form">
+   
+        <form   {% if site['rtl'] %} class="rtl-form "{% endif %} action="{{ page['url'] }}" method="post" id="order-form">
           {% if error %}
             <div class="alert alert-dismissible alert-danger {% if site['rtl'] %} rtl-alert {% endif %}">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -134,20 +152,11 @@
           {%endif%}
 
           <input type="hidden" name="_csrf" value="{{ csrftoken }}">
-          <button type="submit" class=" btn-hover-fill ">{{ lang('neworder.button') }}</button>
+          <button type="submit" class="btn">{{ lang('neworder.button') }}</button>
         </form>
-      </div>
+    
     </div>
   </div>
 </div>
-{% if newOrderText %}
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="well {% if site['rtl'] %} rtl-content {% endif %}">
-          {{ newOrderText }}
-        </div>
-      </div>
-    </div>
-  </div>
-{% endif %}
+
+</section>

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@lottiefiles/dotlottie-web": "^0.44.0",
     "express": "^5.1.0",
     "twig": "^1.17.1"
   },
@@ -10,8 +11,8 @@
     "nodemon": "^3.0.0"
   },
   "scripts": {
-  "server": "cross-env NODE_ENV=development nodemon --ext js,json,twig --ignore public/ server.js",
-  "browser-sync": "browser-sync start --proxy localhost:3000 --files 'public/css/*.css' --reload-delay 1000 --no-open",
-  "dev": "concurrently \"npm run server\" \"npm run browser-sync\""
-}
+    "server": "cross-env NODE_ENV=development nodemon --ext js,json,twig --ignore public/ server.js",
+    "browser-sync": "browser-sync start --proxy localhost:3000 --files 'public/css/*.css' --reload-delay 1000 --no-open",
+    "dev": "concurrently \"npm run server\" \"npm run browser-sync\""
+  }
 }
