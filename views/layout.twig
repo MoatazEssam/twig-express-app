@@ -25,6 +25,12 @@
 			window.modules = {};
 		</script>
 		<link rel="stylesheet" href="/css/neworder.css">
+		<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<!-- AOS Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 	</head>
 	<body>
 		{% if user['auth'] %}
@@ -164,6 +170,11 @@
 			</script>
 		{% endfor %}
 		<script src="/js/neworder.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 
 	</body>
 </html>
