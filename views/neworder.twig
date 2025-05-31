@@ -1,3 +1,39 @@
+<style>
+  .lottie-bg-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Controls Lottie size */
+    grid-auto-rows: 300px; /* Height of each animation row */
+    gap: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .lottie-bg-grid dotlottie-player {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<div class="lottie-bg-grid">
+  {% for i in 0..79 %} {# Adjust count to fill the grid more evenly #}
+    <dotlottie-player
+      src="https://lottie.host/01b46bb3-aef3-41a7-9336-23cd70474e43/6TskTAFhMD.lottie"
+      background="transparent"
+      speed="0.3"
+      loop
+      autoplay
+    ></dotlottie-player>
+  {% endfor %}
+</div>
+
+
+
 <section class="sec">
   {% if newOrderText %}
     <div class="container">
