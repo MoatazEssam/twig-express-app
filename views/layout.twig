@@ -21,144 +21,250 @@
 		{% for style in site['styles'] %}
 			<link rel="stylesheet" type="text/css" href="{{ style['href'] }}">
 		{% endfor %}
-		<script>
-			window.modules = {};
-		</script>
 		<link rel="stylesheet" href="/css/neworder.css">
 		<!-- Animate.css -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
-<!-- AOS Library -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+		<!-- AOS Library -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- Almarai Font -->
+		<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		{% if user['auth'] %}
-			<nav class="navbar navbar-default navbar-inverse navbar-static-top {% if site['rtl'] %} rtl-navbar {% endif %}">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="{{ page_url('index') }}">
+			<!-- Authenticated User Navbar -->
+			<nav class="elegant-navbar" data-aos="fade-down" data-aos-duration="600">
+				<div class="nav-container">
+					<!-- Mobile Menu Button -->
+					<button class="mobile-toggle" aria-label="Toggle menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+
+					<!-- Brand -->
+					<div class="nav-brand">
+						<a href="{{ page_url('index') }}" class="brand-link">
 							{% if site['logo'] %}
-								<img src="{{ site['logo'] }}" alt="{{ site['name'] }}" title="{{ site['name'] }}">
+								<img src="{{ site['logo'] }}" alt="{{ site['name'] }}" class="brand-logo">
 							{% else %}
-								{{ site['name'] }}
+								<span class="brand-text">{{ site['name'] }}</span>
 							{% endif %}
 						</a>
 					</div>
-					<div id="navbar" class="collapse navbar-collapse">
-						<ul class="nav navbar-nav navbar-left-block">
+
+					<!-- Main Navigation -->
+					<div class="nav-menu">
+						<ul class="nav-list">
 							{% for menu in site['menu'] %}
-								<li {% if menu['active'] %} class="active" {% endif %}>
-									<a href="{{ menu['link'] }}" {% if menu['external'] %} target="_blank" {% endif %}>
+								<li class="nav-item">
+									<a href="{{ menu['link'] }}" class="nav-link {% if menu['active'] %}active{% endif %}" {% if menu['external'] %} target="_blank" {% endif %}>
 										{% if menu['icon'] %}
-											<i class="navbar-icon {{ menu['icon'] }}"></i>
+											<i class="{{ menu['icon'] }}"></i>
 										{% endif %}
 										{{ menu['name'] }}
 									</a>
 								</li>
 							{% endfor %}
 						</ul>
-						<ul class="nav navbar-nav navbar-right navbar-right-block">
-							{% for menu in site['account_menu'] %}
-								{% if not menu['link'] %}
-									{% if site.currencies %}
-										<li class="dropdown dropdown-currencies">
-											<a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												<span class="badge">{{ user.balance_formatted }}</span>
-												<span class="caret"></span>
-											</a>
-											<ul class="dropdown-menu" id="currencies-list">
-												{% for key, rate in site.currencies %}
-													<li>
-														<a href="#" id="currencies-item" data-rate-key="{{ key }}" data-rate-symbol="{{ rate.symbol }}">{{ key }}
-															{{ rate.symbol }}</a>
-													</li>
-												{% endfor %}
-											</ul>
-										</li>
-									{% else %}
-										<li>
-											<a>{{ menu['name'] }}</a>
-										</li>
-									{% endif %}
+					</div>
+
+					<!-- Account Section -->
+					<div class="nav-account">
+						{% for menu in site['account_menu'] %}
+							{% if not menu['link'] %}
+								{% if site.currencies %}
+									<div class="balance-section">
+										<button class="balance-btn" data-dropdown="currencies">
+											<i class="fas fa-wallet"></i>
+											<span class="balance-text">{{ user.balance_formatted }}</span>
+											<i class="fas fa-chevron-down"></i>
+										</button>
+										<div class="dropdown-menu" id="currencies">
+											{% for key, rate in site.currencies %}
+												<a href="#" class="dropdown-item" data-rate-key="{{ key }}" data-rate-symbol="{{ rate.symbol }}">
+													<span>{{ key }}</span>
+													<span>{{ rate.symbol }}</span>
+												</a>
+											{% endfor %}
+										</div>
+									</div>
 								{% else %}
-									<li {% if menu['active'] %} class="active" {% endif %}>
-										<a href="{{ menu['link'] }}" {% if menu['external'] %} target="_blank" {% endif %}>{{ menu['name'] }}</a>
+									<span class="account-text">{{ menu['name'] }}</span>
+								{% endif %}
+							{% else %}
+								<a href="{{ menu['link'] }}" class="account-link {% if menu['active'] %}active{% endif %}" {% if menu['external'] %} target="_blank" {% endif %}>
+									{{ menu['name'] }}
+								</a>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+
+				<!-- Mobile Menu -->
+				<div class="mobile-menu">
+					<div class="mobile-header">
+						<a href="{{ page_url('index') }}" class="mobile-brand">
+							{% if site['logo'] %}
+								<img src="{{ site['logo'] }}" alt="{{ site['name'] }}">
+							{% else %}
+								{{ site['name'] }}
+							{% endif %}
+						</a>
+						<button class="mobile-close">
+							<i class="fas fa-times"></i>
+						</button>
+					</div>
+					<div class="mobile-content">
+						<ul class="mobile-nav">
+							{% for menu in site['menu'] %}
+								<li>
+									<a href="{{ menu['link'] }}" class="{% if menu['active'] %}active{% endif %}" {% if menu['external'] %} target="_blank" {% endif %}>
+										{% if menu['icon'] %}
+											<i class="{{ menu['icon'] }}"></i>
+										{% endif %}
+										{{ menu['name'] }}
+									</a>
+								</li>
+							{% endfor %}
+							{% for menu in site['account_menu'] %}
+								{% if menu['link'] %}
+									<li>
+										<a href="{{ menu['link'] }}" class="{% if menu['active'] %}active{% endif %}" {% if menu['external'] %} target="_blank" {% endif %}>
+											{{ menu['name'] }}
+										</a>
 									</li>
 								{% endif %}
 							{% endfor %}
 						</ul>
+						{% if site.currencies %}
+							<div class="mobile-balance">
+								<div class="mobile-balance-display">
+									<i class="fas fa-wallet"></i>
+									<span>{{ user.balance_formatted }}</span>
+								</div>
+								<div class="mobile-currencies">
+									{% for key, rate in site.currencies %}
+										<a href="#" data-rate-key="{{ key }}" data-rate-symbol="{{ rate.symbol }}">
+											{{ key }} {{ rate.symbol }}
+										</a>
+									{% endfor %}
+								</div>
+							</div>
+						{% endif %}
 					</div>
 				</div>
 			</nav>
 		{% else %}
-			<nav class="navbar navbar-default navbar-inverse navbar-static-top {% if site['rtl'] %} rtl-navbar {% endif %}">
-				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="{{ page_url('index') }}">
+			<!-- Guest User Navbar -->
+			<nav class="elegant-navbar guest" data-aos="fade-down" data-aos-duration="600">
+				<div class="nav-container">
+					<!-- Mobile Menu Button -->
+					<button class="mobile-toggle" aria-label="Toggle menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+
+					<!-- Brand -->
+					<div class="nav-brand">
+						<a href="{{ page_url('index') }}" class="brand-link">
 							{% if site['logo'] %}
-								<img src="{{ site['logo'] }}" alt="{{ site['name'] }}" title="">
+								<img src="{{ site['logo'] }}" alt="{{ site['name'] }}" class="brand-logo">
 							{% else %}
-								{{ site['name'] }}
+								<span class="brand-text">{{ site['name'] }}</span>
 							{% endif %}
 						</a>
 					</div>
-					<div id="navbar" class="collapse navbar-collapse">
+
+					<!-- Main Navigation -->
+					<div class="nav-menu">
 						{% if site['languages']|length > 1 %}
-							<ul class="nav navbar-nav navbar-left-block">
-								<li class="dropdown">
+							<div class="language-selector">
+								<button class="language-btn" data-dropdown="languages">
+									<i class="fas fa-globe"></i>
 									{% for lang in site['languages'] %}
 										{% if lang['active'] %}
-											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-												{{ lang['name'] }}
-												<span class="caret"></span>
-											</a>
+											{{ lang['name'] }}
 										{% endif %}
 									{% endfor %}
-									<ul class="dropdown-menu dropdown-max-height">
-										{% for lang in site['languages'] %}
-											<li {% if lang['active'] %} class="active" {% endif %}>
-												<a href="{{ lang['url'] }}">{{ lang['name'] }}</a>
-											</li>
-										{% endfor %}
-									</ul>
-								</li>
-							</ul>
+									<i class="fas fa-chevron-down"></i>
+								</button>
+								<div class="dropdown-menu" id="languages">
+									{% for lang in site['languages'] %}
+										<a href="{{ lang['url'] }}" class="dropdown-item {% if lang['active'] %}active{% endif %}">
+											{{ lang['name'] }}
+										</a>
+									{% endfor %}
+								</div>
+							</div>
 						{% endif %}
-						<ul class="nav navbar-nav navbar-right">
+
+						<ul class="nav-list">
 							{% for menu in site['menu'] %}
-								<li {% if menu['active'] %} class="active" {% endif %}>
-									<a href="{{ menu['link'] }}" {% if menu['external'] %} target="_blank" {% endif %}>
+								<li class="nav-item">
+									<a href="{{ menu['link'] }}" class="nav-link {% if menu['active'] %}active{% endif %}" {% if menu['external'] %} target="_blank" {% endif %}>
 										{% if menu['icon'] %}
-											<i class="navbar-icon {{ menu['icon'] }}"></i>
+											<i class="{{ menu['icon'] }}"></i>
 										{% endif %}
 										{{ menu['name'] }}
 									</a>
 								</li>
 							{% endfor %}
 						</ul>
+					</div>
+				</div>
+
+				<!-- Mobile Menu -->
+				<div class="mobile-menu">
+					<div class="mobile-header">
+						<a href="{{ page_url('index') }}" class="mobile-brand">
+							{% if site['logo'] %}
+								<img src="{{ site['logo'] }}" alt="{{ site['name'] }}">
+							{% else %}
+								{{ site['name'] }}
+							{% endif %}
+						</a>
+						<button class="mobile-close">
+							<i class="fas fa-times"></i>
+						</button>
+					</div>
+					<div class="mobile-content">
+						<ul class="mobile-nav">
+							{% for menu in site['menu'] %}
+								<li>
+									<a href="{{ menu['link'] }}" class="{% if menu['active'] %}active{% endif %}" {% if menu['external'] %} target="_blank" {% endif %}>
+										{% if menu['icon'] %}
+											<i class="{{ menu['icon'] }}"></i>
+										{% endif %}
+										{{ menu['name'] }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+						{% if site['languages']|length > 1 %}
+							<div class="mobile-languages">
+								<h4>Languages</h4>
+								{% for lang in site['languages'] %}
+									<a href="{{ lang['url'] }}" class="{% if lang['active'] %}active{% endif %}">
+										{{ lang['name'] }}
+									</a>
+								{% endfor %}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 			</nav>
 		{% endif %}
 
-		<!-- Main variables *content* -->
-		{{ content }}
+		<!-- Main Content -->
+		<main class="main-content">
+			{{ content }}
+		</main>
 
-		<!-- Notifications wrapper -->
-		<div id="notify-wrapper" class="alert alert-success hidden" style="display: none;"></div>
+		<!-- Notifications -->
+		<div id="notify-wrapper" class="notification-wrapper"></div>
 
 		{{ site['custom_footer'] }}
 
@@ -171,14 +277,65 @@
 		{% endfor %}
 		<script src="/js/neworder.js"></script>
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script
-  src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-  type="module"
-></script>
-<script>
-  AOS.init();
-</script>
+		<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+		<script>
+			AOS.init({
+				duration: 600,
+				easing: 'ease-out',
+				once: true
+			});
 
+			// Simple navbar functionality
+			document.addEventListener('DOMContentLoaded', function() {
+				const mobileToggle = document.querySelector('.mobile-toggle');
+				const mobileMenu = document.querySelector('.mobile-menu');
+				const mobileClose = document.querySelector('.mobile-close');
+				const body = document.body;
 
+				// Mobile menu toggle
+				mobileToggle?.addEventListener('click', () => {
+					mobileMenu.classList.add('active');
+					body.style.overflow = 'hidden';
+				});
+
+				mobileClose?.addEventListener('click', () => {
+					mobileMenu.classList.remove('active');
+					body.style.overflow = '';
+				});
+
+				// Dropdown functionality
+				document.querySelectorAll('[data-dropdown]').forEach(trigger => {
+					const dropdownId = trigger.getAttribute('data-dropdown');
+					const dropdown = document.getElementById(dropdownId);
+					
+					trigger.addEventListener('click', (e) => {
+						e.preventDefault();
+						dropdown.classList.toggle('show');
+						
+						// Close other dropdowns
+						document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+							if (menu !== dropdown) menu.classList.remove('show');
+						});
+					});
+				});
+
+				// Close dropdowns when clicking outside
+				document.addEventListener('click', (e) => {
+					if (!e.target.closest('[data-dropdown]') && !e.target.closest('.dropdown-menu')) {
+						document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+							menu.classList.remove('show');
+						});
+					}
+				});
+
+				// Close mobile menu when clicking outside
+				mobileMenu?.addEventListener('click', (e) => {
+					if (e.target === mobileMenu) {
+						mobileMenu.classList.remove('active');
+						body.style.overflow = '';
+					}
+				});
+			});
+		</script>
 	</body>
 </html>

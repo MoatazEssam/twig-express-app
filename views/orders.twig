@@ -32,197 +32,210 @@
   {% endfor %}
 </div>
 
-  <div class="container">
-    <div class="orders-wrapper">
-      <div class="search-container">
-          <form action="{{ page['url'] }}" method="get" id="history-search">
-            <div class="search-wrapper">
-              <input type="text" name="search" class="search-input" value="{{ search }}" placeholder="{{ lang('general.search.placeholder') }}">
-              <button type="submit" class="search-button">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </div>
-          </form>
+<div class="container">
+  <div class="orders-wrapper">
+    <div class="search-container">
+      <form action="{{ page['url'] }}" method="get" id="history-search">
+        <div class="search-wrapper">
+          <input type="text" name="search" class="search-input" value="{{ search }}" placeholder="{{ lang('general.search.placeholder') }}">
+          <button type="submit" class="search-button">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
         </div>
-      <!-- Order Status Tabs -->
-      <div class="tabs-container">
-        <div class="tabs-wrapper">
-          <a href="{{ page['url'] }}" class="tab-item {{ 'all' == status ? 'active' : '' }}">
-            <i class="fas fa-list-ul"></i>
-            <span>{{ lang('orders.all') }}</span>
-          </a>
-          <a href="{{ page['url'] }}/pending" class="tab-item {{ 'pending' == status ? 'active' : '' }}">
-            <i class="fas fa-clock"></i>
-            <span>{{ lang('orders.status.pending') }}</span>
-          </a>
-          <a href="{{ page['url'] }}/inprogress" class="tab-item {{ 'inprogress' == status ? 'active' : '' }}">
-            <i class="fas fa-spinner"></i>
-            <span>{{ lang('orders.status.inprogress') }}</span>
-          </a>
-          <a href="{{ page['url'] }}/completed" class="tab-item {{ 'completed' == status ? 'active' : '' }}">
-            <i class="fas fa-check-circle"></i>
-            <span>{{ lang('orders.status.completed') }}</span>
-          </a>
-          <a href="{{ page['url'] }}/partial" class="tab-item {{ 'partial' == status ? 'active' : '' }}">
-            <i class="fas fa-adjust"></i>
-            <span>{{ lang('orders.status.partial') }}</span>
-          </a>
-          <a href="{{ page['url'] }}/processing" class="tab-item {{ 'processing' == status ? 'active' : '' }}">
-            <i class="fas fa-cogs"></i>
-            <span>{{ lang('orders.status.processing') }}</span>
-          </a>
-          <a href="{{ page['url'] }}/canceled" class="tab-item {{ 'canceled' == status ? 'active' : '' }}">
-            <i class="fas fa-times-circle"></i>
-            <span>{{ lang('orders.status.canceled') }}</span>
-          </a>
-        </div>
-        
-        <!-- Search Form -->
-      
+      </form>
+    </div>
+    <!-- Order Status Tabs -->
+    <div class="tabs-container">
+      <div class="tabs-wrapper">
+        <a href="{{ page['url'] }}" class="tab-item {{ 'all' == status ? 'active' : '' }}">
+          <i class="fas fa-list-ul"></i>
+          <span>{{ lang('orders.all') }}</span>
+        </a>
+        <a href="{{ page['url'] }}/pending" class="tab-item {{ 'pending' == status ? 'active' : '' }}">
+          <i class="fas fa-clock"></i>
+          <span>{{ lang('orders.status.pending') }}</span>
+        </a>
+        <a href="{{ page['url'] }}/inprogress" class="tab-item {{ 'inprogress' == status ? 'active' : '' }}">
+          <i class="fas fa-spinner"></i>
+          <span>{{ lang('orders.status.inprogress') }}</span>
+        </a>
+        <a href="{{ page['url'] }}/completed" class="tab-item {{ 'completed' == status ? 'active' : '' }}">
+          <i class="fas fa-check-circle"></i>
+          <span>{{ lang('orders.status.completed') }}</span>
+        </a>
+        <a href="{{ page['url'] }}/partial" class="tab-item {{ 'partial' == status ? 'active' : '' }}">
+          <i class="fas fa-adjust"></i>
+          <span>{{ lang('orders.status.partial') }}</span>
+        </a>
+        <a href="{{ page['url'] }}/processing" class="tab-item {{ 'processing' == status ? 'active' : '' }}">
+          <i class="fas fa-cogs"></i>
+          <span>{{ lang('orders.status.processing') }}</span>
+        </a>
+        <a href="{{ page['url'] }}/canceled" class="tab-item {{ 'canceled' == status ? 'active' : '' }}">
+          <i class="fas fa-times-circle"></i>
+          <span>{{ lang('orders.status.canceled') }}</span>
+        </a>
       </div>
-      
-        </div>
-
-
-      <!-- Orders Table -->
-      <div class="table-container">
-        <table class="orders-table {{ site['rtl'] ? 'rtl-table' : '' }}">
-          <thead>
-            <tr>
-              <th>{{ lang('orders.id') }}</th>
-              <th>{{ lang('orders.date') }}</th>
-              <th class="width-40">{{ lang('orders.link') }}</th>
-              <th>{{ lang('orders.charge') }}</th>
-              <th class="nowrap">{{ lang('orders.startcount') }}</th>
-              <th>{{ lang('orders.quantity') }}</th>
-              <th>{{ lang('orders.service') }}</th>
-              <th>{{ lang('orders.status') }}</th>
-              <th>{{ lang('orders.remains') }}</th>
-              {% if task == 1 %}<th>&nbsp;</th>{% endif %}
-            </tr>
-          </thead>
-          <tbody>
-            {% for order in orderList %}
-              <tr>
-                <td>{{ order['id'] }}</td>
-                <td>{{ order['date'] }}</td>
-                <td class="width-40">
-                  {{ order['link'] }}
-                  {% if order['orderDetails'] %}
-                    {% for orderDetails in order['orderDetails'] %}
-                      <a href="#" data-toggle="modal" data-target="#order-details-{{ order['id'] }}-{{ loop.index }}">
-                        <i class="far fa-file-alt"></i>
-                      </a>
-                      <div class="modal" id="order-details-{{ order['id'] }}-{{ loop.index }}">
-                        <div class="modal-content {{ site.rtl ? 'modal-rtl' : '' }}">
-                          <div class="modal-header">
-                            <h4 class="modal-title">{{ orderDetails.label }}</h4>
-                            <button type="button" class="close-modal" data-dismiss="modal">&times;</button>
-                          </div>
-                          <div class="modal-body">
-                            {% for orderDetail in orderDetails['details'] %}
-                              <div class="form-group">
-                                <label for="details-{{ order['id'] }}-{{ loop.index }}">{{ orderDetail.label }}</label>
-                                {% if orderDetail.type == 'textarea' %}
-                                  <textarea id="details-{{ order['id'] }}-{{ loop.index }}" class="form-control" rows="7" disabled>{{ orderDetail.value }}</textarea>
-                                {% elseif orderDetail.type == 'input' %}
-                                  <input id="details-{{ order['id'] }}-{{ loop.index }}" class="form-control" value="{{ orderDetail.value }}" disabled />
-                                {% endif %}
-                              </div>
-                            {% endfor %}
-                          </div>
-                        </div>
-                      </div>
-                    {% endfor %}
-                  {% endif %}
-                </td>
-                <td>{{ order['charge'] }}</td>
-                <td class="nowrap">{{ order['start_count'] }}</td>
-                <td>{{ order['quantity'] }}</td>
-                <td>{{ order['service'] }}</td>
-                <td class="nowrap">
-                  {{ order['status'] }} 
-                  {% if order['cancelReason'] %}
-                    <i class="fas fa-comment-alt" data-toggle="tooltip" data-placement="top" title="{{ order['cancelReason'] }}"></i>
-                  {% endif %}
-                </td>
-                <td>{{ order['remains'] }}</td>
-                {% if task == 1 %}
-                  <td>
-                    <div class="order-actions">
-                      {% if order['refilling'] == 1 %}
-                        {{ lang('orders.refilling') }}
-                      {% else %}
-                        {% if order['refill'] == 1 %}
-                          <a href="{{ page['url'] }}/{{ order['id'] }}/refill" class="btn btn-primary">{{ lang('orders.button.refill') }}</a>
-                        {% endif %}
-                        {% if order['refillAvailableTime'] %}
-                          <button class="btn btn-primary disabled" data-toggle="tooltip" data-placement="top" title="{{ order['refillAvailableTime'] }}">{{ lang('orders.button.refill') }}</button>
-                        {% endif %}
-                        {% if order['cancel'] == 1 %}
-                          <a href="{{ page['url'] }}/{{ order['id'] }}/cancel" class="btn btn-default">{{ lang('orders.button.cancel') }}</a>
-                        {% endif %}
-                      {% endif %}
-                    </div>
-                  </td>
-                {% endif %}
-              </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Pagination -->
-      {% if pagination['count'] > 100 %}
-        {% if searchList %}
-          {% set params = {} %}
-          {% for search in searchList %}
-            {% set params = params | merge([search['name'] ~ '=' ~ search['value']]) %}
-          {% endfor %}
-          {% set params = '?' ~ params|join('&') %}
-        {% endif %}
-        <div class="pagination-container">
-          <ul class="pagination {{ site['rtl'] ? 'rtl-pagination' : '' }}">
-            {% if pagination['current'] != 1 %}
-              <li>
-                <a href="{{ page['url'] }}/{{ status }}/{{ pagination['last'] }}{{ params }}" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-            {% endif %}
-
-            {% set r, l = 3, 3 %}
-
-            {% if pagination['current'] == 1 %}
-              {% set r = 6 %}
-            {% endif %}
-
-            {% if pagination['current'] == 2 %}
-              {% set r = 5 %}
-            {% endif %}
-
-            {% if pagination['current'] >= pagination['pages'] %}
-              {% set l = 5 %}
-            {% endif %}
-
-            {% for i in 1..ceil(pagination['pages']) %}
-              {% if i >= (pagination['current']-l) and i <= (pagination['current']+r) %}
-                <li{% if i == pagination['current'] %} class="active"{% endif %}>
-                  <a href="{{ page['url'] }}/{{ status }}/{{i}}{{ params }}">{{i}}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-
-            {% if pagination['current'] < pagination['pages'] %}
-              <li>
-                <a href="{{ page['url'] }}/{{ status }}/{{ pagination['next'] }}{{ params }}" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            {% endif %}
-          </ul>
-        </div>
-      {% endif %}
-   
+    </div>
   </div>
 
+  <!-- Orders Cards (Replacing Table) -->
+  <div class="orders-cards-container">
+    {% for order in orderList %}
+      <div class="order-card">
+        <div class="order-card-header">
+          <div class="order-id">
+            <span class="order-label">{{ lang('orders.id') }}</span>
+            <span class="order-value">#{{ order['id'] }}</span>
+          </div>
+          <div class="order-status status-{{ order['status']|lower }}">
+            {{ order['status'] }}
+            {% if order['cancelReason'] %}
+              <i class="fas fa-comment-alt tooltip-icon" data-toggle="tooltip" data-placement="top" title="{{ order['cancelReason'] }}"></i>
+            {% endif %}
+          </div>
+        </div>
+        
+        <div class="order-card-body">
+          <div class="order-detail">
+            <span class="detail-label">{{ lang('orders.date') }}</span>
+            <span class="detail-value">{{ order['date'] }}</span>
+          </div>
+          
+          <div class="order-detail">
+            <span class="detail-label">{{ lang('orders.service') }}</span>
+            <span class="detail-value">{{ order['service'] }}</span>
+          </div>
+          
+          <div class="order-detail">
+            <span class="detail-label">{{ lang('orders.link') }}</span>
+            <span class="detail-value link-value">
+              {{ order['link'] }}
+              {% if order['orderDetails'] %}
+                {% for orderDetails in order['orderDetails'] %}
+                  <a href="#" data-toggle="modal" data-target="#order-details-{{ order['id'] }}-{{ loop.index }}">
+                    <i class="far fa-file-alt"></i>
+                  </a>
+                  <div class="modal" id="order-details-{{ order['id'] }}-{{ loop.index }}">
+                    <div class="modal-content {{ site.rtl ? 'modal-rtl' : '' }}">
+                      <div class="modal-header">
+                        <h4 class="modal-title">{{ orderDetails.label }}</h4>
+                        <button type="button" class="close-modal" data-dismiss="modal">&times;</button>
+                      </div>
+                      <div class="modal-body">
+                        {% for orderDetail in orderDetails['details'] %}
+                          <div class="form-group">
+                            <label for="details-{{ order['id'] }}-{{ loop.index }}">{{ orderDetail.label }}</label>
+                            {% if orderDetail.type == 'textarea' %}
+                              <textarea id="details-{{ order['id'] }}-{{ loop.index }}" class="form-control" rows="7" disabled>{{ orderDetail.value }}</textarea>
+                            {% elseif orderDetail.type == 'input' %}
+                              <input id="details-{{ order['id'] }}-{{ loop.index }}" class="form-control" value="{{ orderDetail.value }}" disabled />
+                            {% endif %}
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            </span>
+          </div>
+          
+          <div class="order-metrics">
+            <div class="metric">
+              <span class="metric-label">{{ lang('orders.charge') }}</span>
+              <span class="metric-value">{{ order['charge'] }}</span>
+            </div>
+            
+            <div class="metric">
+              <span class="metric-label">{{ lang('orders.startcount') }}</span>
+              <span class="metric-value">{{ order['start_count'] }}</span>
+            </div>
+            
+            <div class="metric">
+              <span class="metric-label">{{ lang('orders.quantity') }}</span>
+              <span class="metric-value">{{ order['quantity'] }}</span>
+            </div>
+            
+            <div class="metric">
+              <span class="metric-label">{{ lang('orders.remains') }}</span>
+              <span class="metric-value">{{ order['remains'] }}</span>
+            </div>
+          </div>
+        </div>
+        
+        {% if task == 1 %}
+          <div class="order-card-footer">
+            <div class="order-actions">
+              {% if order['refilling'] == 1 %}
+                <span class="refilling-status">{{ lang('orders.refilling') }}</span>
+              {% else %}
+                {% if order['refill'] == 1 %}
+                  <a href="{{ page['url'] }}/{{ order['id'] }}/refill" class="btn btn-primary">{{ lang('orders.button.refill') }}</a>
+                {% endif %}
+                {% if order['refillAvailableTime'] %}
+                  <button class="btn btn-primary disabled" data-toggle="tooltip" data-placement="top" title="{{ order['refillAvailableTime'] }}">{{ lang('orders.button.refill') }}</button>
+                {% endif %}
+                {% if order['cancel'] == 1 %}
+                  <a href="{{ page['url'] }}/{{ order['id'] }}/cancel" class="btn btn-default">{{ lang('orders.button.cancel') }}</a>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Pagination -->
+  {% if pagination['count'] > 100 %}
+    {% if searchList %}
+      {% set params = {} %}
+      {% for search in searchList %}
+        {% set params = params | merge([search['name'] ~ '=' ~ search['value']]) %}
+      {% endfor %}
+      {% set params = '?' ~ params|join('&') %}
+    {% endif %}
+    <div class="pagination-container">
+      <ul class="pagination {{ site['rtl'] ? 'rtl-pagination' : '' }}">
+        {% if pagination['current'] != 1 %}
+          <li>
+            <a href="{{ page['url'] }}/{{ status }}/{{ pagination['last'] }}{{ params }}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+        {% endif %}
+
+        {% set r, l = 3, 3 %}
+
+        {% if pagination['current'] == 1 %}
+          {% set r = 6 %}
+        {% endif %}
+
+        {% if pagination['current'] == 2 %}
+          {% set r = 5 %}
+        {% endif %}
+
+        {% if pagination['current'] >= pagination['pages'] %}
+          {% set l = 5 %}
+        {% endif %}
+
+        {% for i in 1..ceil(pagination['pages']) %}
+          {% if i >= (pagination['current']-l) and i <= (pagination['current']+r) %}
+            <li{% if i == pagination['current'] %} class="active"{% endif %}>
+              <a href="{{ page['url'] }}/{{ status }}/{{i}}{{ params }}">{{i}}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% if pagination['current'] < pagination['pages'] %}
+          <li>
+            <a href="{{ page['url'] }}/{{ status }}/{{ pagination['next'] }}{{ params }}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  {% endif %}
+</div>
