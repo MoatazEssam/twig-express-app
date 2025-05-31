@@ -104,6 +104,19 @@ body {
 .well:hover {
   box-shadow: var(--shadow-lg);
 }
+.well-welcomebox
+{
+   background: var(--surface);
+  border: 1px solid black;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: var(--transition);
+}
+.well-welcomebox:hover{
+  box-shadow: var(--shadow-lg);
+}
 
 /* Clean Buttons */
 .btn {
