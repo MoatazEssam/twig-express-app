@@ -1,0 +1,24 @@
+<!-- confirm_signup -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="well">
+        <form {% if site['rtl'] %}class="rtl-form"{% endif %} method="post" action="">
+          <h3 class="text-center">{{ lang('confirm_signup.title') }}</h3>
+          <div class="form-group text-center">{{ lang('confirm_signup.message') }}</div>
+          <div class="form-group confirm-email__action text-center">
+            <button class="btn btn-primary">{{ lang('confirm_signup.button.google') }}</button>
+          </div>
+          <div class="form-group text-center">{{ lang('signup.text') }} <a href="{{ page_url('signin') }}">{{ lang('signin.title') }}</a></div>
+          {% if check_agreement %}
+            <div class="form-group text-center">
+              <input type="hidden" name="termsofservice" value="1">
+              {{ lang('confirm_signup.terms') }} <a href="{{ page_url('terms') }}" target="_blank">{{ lang('terms.signup_checkbox') }}</a>
+            </div>
+          {% endif %}
+          <input type="hidden" name="_csrf" value="{{ csrftoken }}">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,5 @@
+const { service } = require("./neworder");
+
 module.exports = {
   site: {
     name: "منصة التسويق الرقمي",
@@ -55,7 +57,7 @@ module.exports = {
       { name: "الرصيد: 150.00 ريال", link: "", active: false, external: false },
       {
         name: "الملف الشخصي",
-        link: "/profile",
+        link: "/account",
         active: false,
         external: false,
       },
@@ -116,6 +118,10 @@ module.exports = {
   page_url: function (page) {
     const urls = {
       terms: "/terms",
+      signup: "/signup",
+      dashboard: "/dashboard",
+      services: "/services",
+      faq: "/faq",
     };
     return urls[page] || "/" + page;
   },

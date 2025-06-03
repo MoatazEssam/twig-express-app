@@ -1,0 +1,100 @@
+<!-- refunds -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-offset-2 col-lg-8">
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {{ lang('orders.refunds.alert') }}
+      </div>
+      <ul class="nav nav-pills {% if site['rtl'] %} rtl-nav {% endif %}">
+        <li {% if 'all' == order_status %}class="active"{% endif %}><a href="{{ page['url'] }}{% if search %}?search={{ search }}{% endif %}">{{ lang('orders.refunds.all') }}</a></li>
+        <li {% if 'canceled' == order_status %}class="active"{% endif %}><a href="{{ page['url'] }}?order_status=canceled{% if search %}&search={{ search }}{% endif %}">{{ lang('orders.refunds.canceled') }}</a></li>
+        <li {% if 'partial' == order_status %}class="active"{% endif %}><a href="{{ page['url'] }}?order_status=partial{% if search %}&search={{ search }}{% endif %}">{{ lang('orders.refunds.partial') }}</a></li>
+        <li class="pull-right search">
+          <form action="{{ page['url'] }}" method="get" id="history-search">
+            <div class="input-group">
+              <input type="text" name="search" class="form-control" value="{{ search }}"
+                     placeholder="{{ lang('general.search.placeholder') }}">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
+            </div>
+          </form>
+        </li>
+      </ul>
+      <div class="well well-float">
+        <table class="table {% if site['rtl'] %} rtl-table {% endif %}">
+          <thead>
+          <tr>
+            <th>{{ lang('orders.refunds.id') }}</th>
+            <th>{{ lang('orders.refunds.amount') }}</th>
+            <th>{{ lang('orders.refunds.status') }}</th>
+            <th>{{ lang('orders.refunds.date') }}</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for refund in refundList %}
+            <tr>
+              <td>
+                <a href="{{ page_url('orders') }}?search={{ refund['order_id'] }}">{{ refund['order_id'] }}</a>
+              </td>
+              <td nowrap>{{ refund['amount'] }}</td>
+              <td>{{ refund['order_status_name'] }}</td>
+              <td>{{ refund['date'] }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      {% if pagination['count'] > 100 %}
+        {% if searchList %}
+          {% set params = {} %}
+          {% for search in searchList %}
+            {% set params = params | merge([search['name'] ~ '=' ~ search['value']]) %}
+          {% endfor %}
+          {% set params = '?' ~ params|join('&') %}
+        {% endif %}
+        <ul class="pagination {% if site['rtl'] %} rtl-pagination {% endif %}">
+          {% if pagination['current'] != 1 %}
+            <li>
+              <a href="{{ page['url'] }}?order_status={{ order_status }}&page={{ pagination['last'] }}{% if search %}&search={{ search }}{% endif %}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+          {% endif %}
+
+          {% set r, l = 3, 3 %}
+
+          {% if pagination['current'] == 1 %}
+            {% set r = 6 %}
+          {% endif %}
+
+          {% if pagination['current'] == 2 %}
+            {% set r = 5 %}
+          {% endif %}
+
+          {% if pagination['current'] >= pagination['pages'] %}
+            {% set l = 5 %}
+          {% endif %}
+
+          {% for i in 1..ceil(pagination['pages']) %}
+            {% if i >= (pagination['current']-l) and i <= (pagination['current']+r) %}
+              <li{% if i == pagination['current'] %} class="active"{% endif %}><a
+                    href="{{ page['url'] }}?order_status={{ order_status }}&page={{ i }}{% if search %}&search={{ search }}{% endif %}">{{ i }}</a></li>
+            {% endif %}
+          {% endfor %}
+
+          {% if pagination['current'] < pagination['pages'] %}
+            <li>
+              <a href="{{ page['url'] }}?order_status={{ order_status }}&page={{ pagination['next'] }}{% if search %}&search={{ search }}{% endif %}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
