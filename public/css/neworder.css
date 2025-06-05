@@ -21,15 +21,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #f8f6ff 20%,
-    rgba(44, 104, 245, 0.2) 40%,
-    rgba(44, 104, 245, 0.2) 60%,
-    #ffffff 80%,
-    #f0ebff 100%
-  );
+
   background-size: 300% 300%;
   animation: bgGradientMove 20s ease-in-out infinite;
 }

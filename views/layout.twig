@@ -33,7 +33,9 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 		<!-- Almarai Font -->
 		<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
-	
+		<!-- Swiper CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+		
 	
 	</head>
 	<body>
@@ -277,7 +279,7 @@
 								جميع خدمات السوشال ميديا في مكان واحد وبضمان أقل الاسعار
 							</p>
 							<div class="hero-buttons" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-								<a href="{{ page_url('signup') }}" class="btn btn-primary btn-hero gradient-btn">
+								<a href="{{ page_url('signup') }}" class="btn btn-primary btn-hero">
 									<i class="fas fa-user-plus"></i>
 									<span>سجل الآن</span>
 									<div class="btn-shine"></div>
@@ -314,146 +316,95 @@
 								filter: blur(40px); animation: pulse-glow 5s infinite ease-in-out 1s;"></div>
 				</section>
 				
-		<section class="about-section py-16 bg-white text-gray-800 rtl">
-  <div class="container mx-auto px-6 max-w-7xl">
-    <div
-      class="section-header text-center mb-12"
-      data-aos="fade-up"
-      data-aos-duration="800"
-    >
-      <h2 class="text-4xl font-extrabold mb-2">من نحن</h2>
-      <div class="mx-auto w-24 h-1 bg-primary rounded-full"></div>
-    </div>
+				<section class="about-section py-16 bg-white text-text rtl">
+					<div class="container mx-auto px-6 max-w-7xl">
+						<div class="section-header text-center mb-12" data-aos="fade-up" data-aos-duration="800">
+							<h2 class="text-4xl font-extrabold mb-2">من نحن</h2>
+							<div class="mx-auto w-24 h-1 bg-primary rounded-full"></div>
+						</div>
 
-    <div
-      class="about-content flex flex-col md:flex-row items-center gap-10 md:gap-20"
-    >
-      <div
-        class="about-text md:flex-1 space-y-6"
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-delay="200"
-      >
-        <h3 class="text-2xl font-bold text-gray-900">
-          يلا تيك - الخبراء في خدمات السوشيال ميديا
-        </h3>
-        <p class="text-base leading-relaxed text-2xl text-gray-700">
-          نحن في <span class="text-primary font-semibold">يلا تيك</span> نقدم خدمات
-          احترافية متكاملة لتعزيز تواجدك على منصات التواصل الاجتماعي. فريقنا من
-          الخبراء يساعدك على زيادة المتابعين والتفاعل وبناء هويتك الرقمية بأسعار
-          تنافسية وجودة عالية.
-        </p>
-        <p class="text-base leading-relaxed text-2xl text-gray-700">
-          نتميز بتقديم حلول مخصصة لكل عميل تناسب احتياجاته الخاصة، مع ضمان نتائج
-          سريعة وفعالة تساعد في نمو حسابك على مختلف المنصات مثل انستغرام، فيسبوك،
-          تويتر، يوتيوب، وتيك توك.
-        </p>
+						<div class=" flex flex-col md:flex-row items-center gap-10 md:gap-20">
+						
+							<div class="about-image md:flex-1 flex justify-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+								<div class="relative w-72 h-72">
+									<dotlottie-player
+										src="https://lottie.host/34cbc731-224a-4813-a2ac-433942b239ce/WssF3aqAfE.lottie"
+										background="transparent"
+										speed="0.3"
+										style="width: 300px; height: 300px"
+										loop
+										autoplay
+									></dotlottie-player>
+								</div>
+							</div>
+							<div class="about-text text-right md:flex-1 space-y-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+								<h3 class="text-3xl font-extrabold text-text">
+									يلا تيك - الخبراء في خدمات السوشيال ميديا
+								</h3>
+								<p class="font-semibold leading-relaxed text-2xl text-text-light">
+									نحن في <span class="font-semibold" style="color: var(--primary)">يلا تيك</span> نقدم خدمات
+									احترافية متكاملة لتعزيز تواجدك على منصات التواصل الاجتماعي. فريقنا من
+									الخبراء يساعدك على زيادة المتابعين والتفاعل وبناء هويتك الرقمية بأسعار
+									تنافسية وجودة عالية.
+								</p>
+								<p class="font-semibold leading-relaxed text-2xl text-text-light">
+									نتميز بتقديم حلول مخصصة لكل عميل تناسب احتياجاته الخاصة، مع ضمان نتائج
+									سريعة وفعالة تساعد في نمو حسابك على مختلف المنصات مثل انستغرام، فيسبوك،
+									تويتر، يوتيوب، وتيك توك.
+								</p>
 
-        <div
-          class="about-features grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 text-gray-700"
-        >
-          <div
-            class="feature-item flex items-center gap-3"
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-delay="300"
-          >
-            <i class="fas fa-check-circle text-primary text-xl"></i>
-            <span>خدمة عملاء على مدار الساعة</span>
-          </div>
+								<div class="about-features grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 text-text-light font-semibold">
+									<div class="feature-item text-right flex flex-row-reverse items-center gap-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+										<span>خدمة عملاء على مدار الساعة</span>
+										<i class="fas fa-check-circle  text-xl" style="color: var(--primary)"></i>
+									</div>
 
-          <div
-            class="feature-item flex items-center gap-3"
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-delay="400"
-          >
-            <i class="fas fa-check-circle text-primary text-xl"></i>
-            <span>أسعار تنافسية مع ضمان الجودة</span>
-          </div>
+									<div class="feature-item text-right flex flex-row-reverse items-center gap-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+										<span>أسعار تنافسية مع ضمان الجودة</span>
+										<i class="fas fa-check-circle  text-xl" style="color: var(--primary)"></i>
+									</div>
 
-          <div
-            class="feature-item flex items-center gap-3"
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-delay="500"
-          >
-            <i class="fas fa-check-circle text-primary text-xl"></i>
-            <span>تنفيذ سريع للطلبات</span>
-          </div>
+									<div class="feature-item text-right flex flex-row-reverse items-center gap-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+										<span>تنفيذ سريع للطلبات</span>
+										<i class="fas fa-check-circle  text-xl" style="color: var(--primary)"></i>
+									</div>
 
-          <div
-            class="feature-item flex items-center gap-3"
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-delay="600"
-          >
-            <i class="fas fa-check-circle text-primary text-xl"></i>
-            <span>حلول مخصصة لكل عميل</span>
-          </div>
-        </div>
+									<div class="feature-item text-right flex flex-row-reverse items-center gap-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+										<span>حلول مخصصة لكل عميل</span>
+										<i class="fas fa-check-circle  text-xl" style="color: var(--primary)"></i>
+									</div>
+								</div>
 
-        <div
-          class="about-cta mt-10"
-          data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-delay="700"
-        >
-          <a
-            href="#"
-            class="inline-flex items-center gap-3 px-6 py-3 border-2 border-black text-[#7b2a47]  font-semibold rounded-lg shadow-lg hover:brightness-110 transition"
-          >
-            <i class="fas fa-rocket"></i>
-            <span>اكتشف خدماتنا</span>
-          </a>
-        </div>
-      </div>
+								<div class="about-cta mt-10" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+									<a href="#" class="btn btn-primary btn-hero">
+										<i class="fas fa-rocket"></i>
+										<span>اكتشف خدماتنا</span>
+									</a>
+								</div>
+							</div>
 
-      <div
-        class="about-image md:flex-1 flex justify-center"
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-delay="300"
-      >
-        <div class="relative w-72 h-72">
-          <dotlottie-player
-            src="https://lottie.host/34cbc731-224a-4813-a2ac-433942b239ce/WssF3aqAfE.lottie"
-            background="transparent"
-            speed="0.3"
-            style="width: 300px; height: 300px"
-            loop
-            autoplay
-          ></dotlottie-player>
-          <!-- Decoration circles can be added here if needed -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+						</div>
+					</div>
+				</section>
 
 				<!-- Services Section -->
-				<section
-					class="py-20 relative overflow-hidden"
-					style="background: linear-gradient(to bottom right, #14a3d6, #7b2a47, #2c1b30);" dir="rtl"
-				>
-					<!-- Floating decorative elements -->
+				<section class="py-20 relative overflow-hidden" style="background:white;" dir="rtl">
 					<div class="container mx-auto px-4 relative">
 						<div class="text-center mb-16" data-aos="fade-up">
-							<h2 class="text-4xl md:text-5xl font-bold text-white mb-6">خدماتنا المميزة</h2>
-							<p class="text-xl text-purple-200 max-w-3xl mx-auto">نقدم مجموعة شاملة من الخدمات لتعزيز حضورك على منصات التواصل الاجتماعي</p>
+							<h2 class="text-4xl md:text-5xl font-bold text-text mb-6">خدماتنا المميزة</h2>
+							<p class="text-xl font-semibold text-text-light max-w-3xl mx-auto">نقدم مجموعة شاملة من الخدمات لتعزيز حضورك على منصات التواصل الاجتماعي</p>
 						</div>
 
 						<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 							<!-- Instagram Services -->
-							<div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 service-card" data-aos="fade-up" data-aos-delay="100">
+							<div class="service-card" data-aos="fade-up" data-aos-delay="100">
 								<div class="text-center mb-6">
 									<div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
 										<i class="fab fa-instagram text-white text-2xl"></i>
 									</div>
-									<h3 class="text-2xl font-bold text-white mb-2">خدمات انستغرام</h3>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات انستغرام</h3>
 								</div>
-								<ul class="space-y-3 text-purple-200">
+								<ul class="space-y-3 text-text font-semibold">
 									<li class="flex items-center">
 										<i class="fas fa-check text-green-400 ml-3"></i>
 										زيادة المتابعين
@@ -474,14 +425,14 @@
 							</div>
 
 							<!-- TikTok Services -->
-							<div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 service-card" data-aos="fade-up" data-aos-delay="200">
+							<div class="service-card" data-aos="fade-up" data-aos-delay="200">
 								<div class="text-center mb-6">
 									<div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
 										<i class="fab fa-tiktok text-white text-2xl"></i>
 									</div>
-									<h3 class="text-2xl font-bold text-white mb-2">خدمات تيك توك</h3>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات تيك توك</h3>
 								</div>
-								<ul class="space-y-3 text-purple-200">
+								<ul class="space-y-3 text-text font-semibold">
 									<li class="flex items-center">
 										<i class="fas fa-check text-green-400 ml-3"></i>
 										زيادة المتابعين
@@ -502,14 +453,14 @@
 							</div>
 
 							<!-- YouTube Services -->
-							<div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 service-card" data-aos="fade-up" data-aos-delay="300">
+							<div class="service-card" data-aos="fade-up" data-aos-delay="300">
 								<div class="text-center mb-6">
 									<div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
 										<i class="fab fa-youtube text-white text-2xl"></i>
 									</div>
-									<h3 class="text-2xl font-bold text-white mb-2">خدمات يوتيوب</h3>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات يوتيوب</h3>
 								</div>
-								<ul class="space-y-3 text-purple-200">
+								<ul class="space-y-3 text-text font-semibold">
 									<li class="flex items-center">
 										<i class="fas fa-check text-green-400 ml-3"></i>
 										زيادة المشتركين
@@ -530,14 +481,14 @@
 							</div>
 
 							<!-- Facebook Services -->
-							<div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 service-card" data-aos="fade-up" data-aos-delay="400">
+							<div class="service-card" data-aos="fade-up" data-aos-delay="400">
 								<div class="text-center mb-6">
 									<div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
 										<i class="fab fa-facebook text-white text-2xl"></i>
 									</div>
-									<h3 class="text-2xl font-bold text-white mb-2">خدمات فيسبوك</h3>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات فيسبوك</h3>
 								</div>
-								<ul class="space-y-3 text-purple-200">
+								<ul class="space-y-3 text-text font-semibold">
 									<li class="flex items-center">
 										<i class="fas fa-check text-green-400 ml-3"></i>
 										زيادة المتابعين
@@ -558,14 +509,14 @@
 							</div>
 
 							<!-- Twitter Services -->
-							<div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 service-card" data-aos="fade-up" data-aos-delay="500">
+							<div class="service-card" data-aos="fade-up" data-aos-delay="500">
 								<div class="text-center mb-6">
 									<div class="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
 										<i class="fab fa-twitter text-white text-2xl"></i>
 									</div>
-									<h3 class="text-2xl font-bold text-white mb-2">خدمات تويتر</h3>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات تويتر</h3>
 								</div>
-								<ul class="space-y-3 text-purple-200">
+								<ul class="space-y-3 text-text font-semibold">
 									<li class="flex items-center">
 										<i class="fas fa-check text-green-400 ml-3"></i>
 										زيادة المتابعين
@@ -586,14 +537,14 @@
 							</div>
 
 							<!-- Snapchat Services -->
-							<div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 service-card" data-aos="fade-up" data-aos-delay="600">
+							<div class="service-card" data-aos="fade-up" data-aos-delay="600">
 								<div class="text-center mb-6">
 									<div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
 										<i class="fab fa-snapchat text-white text-2xl"></i>
 									</div>
-									<h3 class="text-2xl font-bold text-white mb-2">خدمات سناب شات</h3>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات سناب شات</h3>
 								</div>
-								<ul class="space-y-3 text-purple-200">
+								<ul class="space-y-3 text-text font-semibold">
 									<li class="flex items-center">
 										<i class="fas fa-check text-green-400 ml-3"></i>
 										زيادة المتابعين
@@ -615,7 +566,7 @@
 						</div>
 
 						<div class="text-center mt-12" data-aos="fade-up" data-aos-delay="700">
-							<a href="{{ page_url('services') }}" class="inline-flex items-center border border-white px-8 py-4 bg-none decoration-none text-white font-bold rounded-3xl hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
+							<a href="{{ page_url('services') }}" class="btn btn-primary btn-hero">
 								<i class="fas fa-arrow-left ml-3"></i>
 								عرض جميع الخدمات
 							</a>
@@ -624,11 +575,11 @@
 				</section>
 
 				<!-- Features Section -->
-				<section class="py-20" dir="rtl">
+				<section class="py-20 my-20 bg-white" dir="rtl">
 					<div class="container mx-auto px-4">
 						<div class="text-center mb-16" data-aos="fade-up">
-							<h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">لماذا تختار يلا تيك؟</h2>
-							<p class="text-xl text-gray-600 max-w-3xl mx-auto">نحن نقدم أفضل الخدمات في السوق مع ضمان الجودة والسرعة</p>
+							<h2 class="text-4xl md:text-5xl font-bold text-text mb-6">لماذا تختار يلا تيك؟</h2>
+							<p class="text-xl font-semibold text-text-light max-w-3xl mx-auto">نحن نقدم أفضل الخدمات في السوق مع ضمان الجودة والسرعة</p>
 						</div>
 
 						<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -643,8 +594,8 @@
 										autoplay
 									></dotlottie-player>
 								</div>
-								<h3 class="text-2xl font-bold text-gray-800 mb-4">سرعة في التنفيذ</h3>
-								<p class="text-gray-600">نبدأ تنفيذ طلبك خلال دقائق من الطلب</p>
+								<h3 class="text-2xl font-bold text-text mb-4">سرعة في التنفيذ</h3>
+								<p class="text-text">نبدأ تنفيذ طلبك خلال دقائق من الطلب</p>
 							</div>
 
 							<div class="text-center" data-aos="fade-up" data-aos-delay="200">
@@ -658,8 +609,8 @@
 										autoplay
 									></dotlottie-player>
 								</div>
-								<h3 class="text-2xl font-bold text-gray-800 mb-4">ضمان الجودة</h3>
-								<p class="text-gray-600">جميع خدماتنا مضمونة 100% مع إمكانية الاسترداد</p>
+								<h3 class="text-2xl font-bold text-text mb-4">ضمان الجودة</h3>
+								<p class="text-text">جميع خدماتنا مضمونة 100% مع إمكانية الاسترداد</p>
 							</div>
 
 							<div class="text-center" data-aos="fade-up" data-aos-delay="300">
@@ -673,8 +624,8 @@
 										autoplay
 									></dotlottie-player>
 								</div>
-								<h3 class="text-2xl font-bold text-gray-800 mb-4">دعم 24/7</h3>
-								<p class="text-gray-600">فريق الدعم متاح على مدار الساعة لمساعدتك</p>
+								<h3 class="text-2xl font-bold text-text mb-4">دعم 24/7</h3>
+								<p class="text-text">فريق الدعم متاح على مدار الساعة لمساعدتك</p>
 							</div>
 
 							<div class="text-center" data-aos="fade-up" data-aos-delay="400">
@@ -688,114 +639,287 @@
 										autoplay
 									></dotlottie-player>
 								</div>
-								<h3 class="text-2xl font-bold text-gray-800 mb-4">أسعار تنافسية</h3>
-								<p class="text-gray-600">أفضل الأسعار في السوق مع جودة عالية</p>
+								<h3 class="text-2xl font-bold text-text mb-4">أسعار تنافسية</h3>
+								<p class="text-text">أفضل الأسعار في السوق مع جودة عالية</p>
 							</div>
 						</div>
 					</div>
 				</section>
 
-				<!-- Statistics Section -->
-				<section class="py-20" style="background: linear-gradient(to bottom right, #14a3d6, #7b2a47);" dir="rtl">
-					<div class="container mx-auto px-4">
-						<div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-white">
-							<div class="stat-card" data-aos="fade-up" data-aos-delay="100">
-								<div class="stat-number">+50K</div>
-								<div class="stat-label">عميل راضي</div>
-							</div>
-							<div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-								<div class="stat-number">+1M</div>
-								<div class="stat-label">طلب مكتمل</div>
-							</div>
-							<div class="stat-card" data-aos="fade-up" data-aos-delay="300">
-								<div class="stat-number">24/7</div>
-								<div class="stat-label">دعم فني</div>
-							</div>
-							<div class="stat-card" data-aos="fade-up" data-aos-delay="400">
-								<div class="stat-number">99%</div>
-								<div class="stat-label">معدل الرضا</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Testimonials Section -->
+				<!-- Enhanced Statistics Section -->
 				<section class="py-20 bg-white" dir="rtl">
 					<div class="container mx-auto px-4">
 						<div class="text-center mb-16" data-aos="fade-up">
-							<h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">ماذا يقول عملاؤنا</h2>
-							<p class="text-xl text-gray-600 max-w-3xl mx-auto">آراء حقيقية من عملائنا الذين حققوا نجاحاً باهراً معنا</p>
+							<h2 class="text-4xl md:text-5xl font-bold text-text mb-6">إنجازاتنا بالأرقام</h2>
+							<p class="text-xl font-semibold text-text-light max-w-3xl mx-auto">
+								نفخر بما حققناه من نجاحات مع عملائنا على مدار السنوات
+							</p>
 						</div>
 
-						<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-							<div class="testimonial-card bg-gray-50  rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
-								<div class="flex items-center mb-4">
-									<div class="testimonial-avatar w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">أ</div>
-									<div class="mr-4">
-										<h4 class="font-bold text-gray-800">أحمد محمد</h4>
-										<div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+						<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+							<!-- Stat Item 1 -->
+							<div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
+								<div class="stats-circle-container">
+									<svg class="stats-circle-svg" viewBox="0 0 120 120">
+										<circle class="stats-circle-bg" cx="60" cy="60" r="50"></circle>
+										<circle class="stats-circle-progress" cx="60" cy="60" r="50" style="--percent: 85"></circle>
+									</svg>
+									<div class="stats-content">
+										<div class="stats-number" data-target="50000" data-suffix="K" data-prefix="+">0</div>
+										<div class="stats-label">عميل راضي</div>
 									</div>
 								</div>
-								<p class="text-gray-600">"خدمة ممتازة وسريعة! زاد عدد متابعيني على انستغرام بشكل كبير في وقت قصير. أنصح بشدة!"</p>
 							</div>
 
-							<div class="testimonial-card bg-gray-50 rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
-								<div class="flex items-center mb-4">
-									<div class="testimonial-avatar w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold">س</div>
-									<div class="mr-4">
-										<h4 class="font-bold text-gray-800">سارة أحمد</h4>
-										<div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+							<!-- Stat Item 2 -->
+							<div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
+								<div class="stats-circle-container">
+									<svg class="stats-circle-svg" viewBox="0 0 120 120">
+										<circle class="stats-circle-bg" cx="60" cy="60" r="50"></circle>
+										<circle class="stats-circle-progress" cx="60" cy="60" r="50" style="--percent: 92"></circle>
+									</svg>
+									<div class="stats-content">
+										<div class="stats-number" data-target="1000000" data-suffix="M" data-prefix="+">0</div>
+										<div class="stats-label">طلب مكتمل</div>
 									</div>
 								</div>
-								<p class="text-gray-600">"أفضل موقع للحصول على خدمات السوشيال ميديا. الأسعار معقولة والجودة عالية جداً."</p>
 							</div>
 
-							<div class="testimonial-card bg-gray-50 rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="300">
-								<div class="flex items-center mb-4">
-									<div class="testimonial-avatar w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">م</div>
-									<div class="mr-4">
-										<h4 class="font-bold text-gray-800">محمد علي</h4>
-										<div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+							<!-- Stat Item 3 -->
+							<div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
+								<div class="stats-circle-container">
+									<svg class="stats-circle-svg" viewBox="0 0 120 120">
+										<circle class="stats-circle-bg" cx="60" cy="60" r="50"></circle>
+										<circle class="stats-circle-progress" cx="60" cy="60" r="50" style="--percent: 100"></circle>
+									</svg>
+									<div class="stats-content">
+										<div class="stats-number" data-target="24" data-suffix="/7">0</div>
+										<div class="stats-label">دعم فني</div>
 									</div>
 								</div>
-								<p class="text-gray-600">"تعامل راقي ومهني. حققت أهدافي في زيادة المتابعين بفضل خدماتهم المميزة."</p>
+							</div>
+
+							<!-- Stat Item 4 -->
+							<div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
+								<div class="stats-circle-container">
+									<svg class="stats-circle-svg" viewBox="0 0 120 120">
+										<circle class="stats-circle-bg" cx="60" cy="60" r="50"></circle>
+										<circle class="stats-circle-progress" cx="60" cy="60" r="50" style="--percent: 99"></circle>
+									</svg>
+									<div class="stats-content">
+										<div class="stats-number" data-target="99" data-suffix="%">0</div>
+										<div class="stats-label">معدل الرضا</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</section>
 
-				<!-- CTA Section -->
-				<section class="py-20 relative overflow-hidden" style="background: linear-gradient(to bottom right, #14a3d6, #7b2a47);" dir="rtl">
-					<div class="absolute inset-0 bg-black/20"></div>
-					<!-- Enhanced CTA Background -->
-					<div class="absolute inset-0 overflow-hidden pointer-events-none">
-						<div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black/10 to-transparent"></div>
-						<div class="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black/10 to-transparent"></div>
-						<div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/5 blur-3xl"></div>
-						<div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-white/5 blur-3xl"></div>
+				<!-- Improved Testimonials Section -->
+			<!-- Wide Creative Testimonials Section -->
+<section class="py-20 bg-white" dir="rtl">
+	<div class="container mx-auto px-4">
+		<div class="text-center mb-16" data-aos="fade-up">
+			<h2 class="text-4xl md:text-5xl font-bold text-text mb-6">آراء عملائنا</h2>
+			<p class="text-xl font-semibold text-text-light max-w-3xl mx-auto">تجارب حقيقية من عملاء حققوا نجاحات كبيرة مع خدماتنا</p>
+		</div>
+
+		<!-- Wide Testimonials Cards -->
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+			
+			<!-- Card 1 -->
+			<div class="testimonial-card instagram" data-aos="fade-up" data-aos-delay="100">
+				<div class="card-header">
+					<div class="platform-icon">
+						<i class="fab fa-instagram"></i>
 					</div>
+					<div class="rating">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+				</div>
+				<div class="card-content">
+					<p>"خدمة ممتازة وسريعة! زاد عدد متابعيني على انستغرام بشكل كبير في وقت قصير. أنصح بشدة بخدمات يلا تيك لكل من يريد تعزيز تواجده على منصات التواصل الاجتماعي."</p>
+				</div>
+				<div class="card-author">
+					<div class="avatar">أ</div>
+					<div class="author-info">
+						<h4>أحمد محمد</h4>
+						<span>مؤثر على انستغرام</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Card 2 -->
+			<div class="testimonial-card facebook" data-aos="fade-up" data-aos-delay="200">
+				<div class="card-header">
+					<div class="platform-icon">
+						<i class="fab fa-facebook"></i>
+					</div>
+					<div class="rating">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+				</div>
+				<div class="card-content">
+					<p>"أفضل موقع للحصول على خدمات السوشيال ميديا. الأسعار معقولة والجودة عالية جداً. استخدمت خدماتهم لزيادة متابعين صفحتي على فيسبوك وكانت النتائج مذهلة."</p>
+				</div>
+				<div class="card-author">
+					<div class="avatar">س</div>
+					<div class="author-info">
+						<h4>سارة أحمد</h4>
+						<span>صاحبة متجر إلكتروني</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Card 3 -->
+			<div class="testimonial-card youtube" data-aos="fade-up" data-aos-delay="300">
+				<div class="card-header">
+					<div class="platform-icon">
+						<i class="fab fa-youtube"></i>
+					</div>
+					<div class="rating">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+				</div>
+				<div class="card-content">
+					<p>"تعامل راقي ومهني. حققت أهدافي في زيادة المشتركين بفضل خدماتهم المميزة. فريق الدعم متعاون جداً ويستجيب بسرعة لأي استفسار. أنصح بهم لكل من يريد تطوير حسابه."</p>
+				</div>
+				<div class="card-author">
+					<div class="avatar">م</div>
+					<div class="author-info">
+						<h4>محمد علي</h4>
+						<span>يوتيوبر</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Card 4 -->
+			<div class="testimonial-card tiktok" data-aos="fade-up" data-aos-delay="400">
+				<div class="card-header">
+					<div class="platform-icon">
+						<i class="fab fa-tiktok"></i>
+					</div>
+					<div class="rating">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star-half-alt"></i>
+					</div>
+				</div>
+				<div class="card-content">
+					<p>"خدمة ممتازة وسريعة! استخدمت خدمات يلا تيك لزيادة متابعين حسابي على تيك توك وكانت النتائج رائعة. حسابي وصل للفيرال بفضل الخدمات المميزة التي يقدمونها."</p>
+				</div>
+				<div class="card-author">
+					<div class="avatar">ن</div>
+					<div class="author-info">
+						<h4>نورة خالد</h4>
+						<span>صانعة محتوى</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Card 5 -->
+			<div class="testimonial-card twitter" data-aos="fade-up" data-aos-delay="500">
+				<div class="card-header">
+					<div class="platform-icon">
+						<i class="fab fa-twitter"></i>
+					</div>
+					<div class="rating">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+				</div>
+				<div class="card-content">
+					<p>"سرعة في التنفيذ وجودة عالية. زادت تفاعلات تويتر بشكل ملحوظ. أنصح بالتجربة لكل من يريد نتائج سريعة وموثوقة. الخدمة تستحق كل ريال دفعته."</p>
+				</div>
+				<div class="card-author">
+					<div class="avatar">ع</div>
+					<div class="author-info">
+						<h4>عبدالله سعد</h4>
+						<span>كاتب ومدون</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Card 6 -->
+			<div class="testimonial-card snapchat" data-aos="fade-up" data-aos-delay="600">
+				<div class="card-header">
+					<div class="platform-icon">
+						<i class="fab fa-snapchat"></i>
+					</div>
+					<div class="rating">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+				</div>
+				<div class="card-content">
+					<p>"خدمة احترافية ونتائج مضمونة. زادت نقاط سناب شات بشكل كبير وأصبح لدي متابعين حقيقيين ومتفاعلين. التعامل مع الفريق كان سهل ومريح جداً."</p>
+				</div>
+				<div class="card-author">
+					<div class="avatar">ل</div>
+					<div class="author-info">
+						<h4>لينا محمود</h4>
+						<span>مصممة جرافيك</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+				<!-- CTA Section -->
+				<section class="py-20 relative overflow-hidden" style="background:white" dir="rtl">
 					<div class="container mx-auto px-4 relative">
-						<div class="text-center text-white" data-aos="fade-up">
-							<h2 class="text-4xl md:text-5xl font-bold mb-6">ابدأ رحلتك نحو النجاح اليوم</h2>
-							<p class="text-xl mb-8 max-w-3xl mx-auto">انضم إلى آلاف العملاء الذين حققوا نجاحاً باهراً في عالم السوشيال ميديا</p>
-							<div class="flex flex-col sm:flex-row gap-4 justify-center">
-								<a href="{{ page_url('register') }}" class="inline-flex items-center px-8 py-4 bg-white text-purple-900 font-bold rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-									<i class="fas fa-user-plus ml-3"></i>
-									إنشاء حساب جديد
-								</a>
-								<a href="{{ page_url('services') }}" class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-purple-900 transition-all duration-300">
-									<i class="fas fa-list ml-3"></i>
-									تصفح الخدمات
-								</a>
+						<div class="cta-container" data-aos="fade-up">
+							<div class="cta-content">
+								<h2 class="text-4xl md:text-5xl font-bold mb-6">ابدأ رحلتك نحو النجاح اليوم</h2>
+								<p class="text-xl mb-8 max-w-3xl font-semibold mx-auto">انضم إلى آلاف العملاء الذين حققوا نجاحاً باهراً في عالم السوشيال ميديا</p>
+								<div class="flex flex-col sm:flex-row gap-4 justify-center">
+									<a href="{{ page_url('register') }}" class="btn btn-primary btn-hero">
+										<i class="fas fa-user-plus ml-3"></i>
+										إنشاء حساب جديد
+									</a>
+									<a href="{{ page_url('services') }}" class="btn btn-secondary btn-hero">
+										<i class="fas fa-list ml-3"></i>
+										تصفح الخدمات
+									</a>
+								</div>
+							</div>
+							<div class="cta-decoration">
+								<div class="cta-shape shape-1"></div>
+								<div class="cta-shape shape-2"></div>
+								<div class="cta-shape shape-3"></div>
 							</div>
 						</div>
 					</div>
 				</section>
 
 				<!-- Footer -->
-				<footer class="bg-gray-900 text-white py-16" dir="rtl">
+				<footer class="bg-gray-200 text-text py-16" dir="rtl">
 					<div class="container mx-auto px-4">
-						<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+						<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 							<div>
 								<div class="flex items-center mb-6">
 									{% if site['logo'] %}
@@ -803,54 +927,60 @@
 									{% endif %}
 									<span class="text-2xl font-bold">{{ site['name'] }}</span>
 								</div>
-								<p class="text-gray-400 mb-4">منصة يلا تيك الرائدة في تقديم خدمات السوشيال ميديا بجودة عالية وأسعار تنافسية.</p>
+								<p class="text-text-light mb-4">منصة يلا تيك الرائدة في تقديم خدمات السوشيال ميديا بجودة عالية وأسعار تنافسية.</p>
 								<div class="flex space-x-4 space-x-reverse">
-									<a href="#" class="social-icon text-gray-400 hover:text-white transition-colors">
-										<i class="fab fa-facebook text-xl"></i>
+									<a href="#" class="social-icon text-text-light hover:text-primary transition-all duration-300">
+										<i class="fab fa-facebook text-4xl"></i>
 									</a>
-									<a href="#" class="social-icon text-gray-400 hover:text-white transition-colors">
-										<i class="fab fa-twitter text-xl"></i>
+									<a href="#" class="social-icon text-text-light hover:text-primary transition-all duration-300">
+										<i class="fab fa-twitter text-4xl"></i>
 									</a>
-									<a href="#" class="social-icon text-gray-400 hover:text-white transition-colors">
-										<i class="fab fa-instagram text-xl"></i>
+									<a href="#" class="social-icon text-text-light hover:text-primary transition-all duration-300">
+										<i class="fab fa-instagram text-4xl"></i>
 									</a>
-									<a href="#" class="social-icon text-gray-400 hover:text-white transition-colors">
-										<i class="fab fa-telegram text-xl"></i>
+									<a href="#" class="social-icon text-text-light hover:text-primary transition-all duration-300">
+										<i class="fab fa-telegram text-4xl"></i>
 									</a>
 								</div>
 							</div>
 
 							<div>
-								<h3 class="text-xl font-bold mb-6">روابط سريعة</h3>
+								<h3 class="text-3xl text-text font-bold mb-6">روابط سريعة</h3>
 								<ul class="space-y-3">
-									<li><a href="{{ page_url('faq') }}" class="footer-link text-gray-400 hover:text-white transition-colors">الاسئلة الشائعة</a></li>
-									<li><a href="{{ page_url('services') }}" class="footer-link text-gray-400 hover:text-white transition-colors">الخدمات</a></li>
-									<li><a href="{{ page_url('about') }}" class="footer-link text-gray-400 hover:text-white transition-colors">من نحن</a></li>
-									<li><a href="{{ page_url('contact') }}" class="footer-link text-gray-400 hover:text-white transition-colors">اتصل بنا</a></li>
+									<li><a href="{{ page_url('faq') }}" class="footer-link text-text-light hover:text-primary no-underline hover:no-underline" >الاسئلة الشائعة</a></li>
+									<li><a href="{{ page_url('services') }}" class="footer-link text-text-light hover:text-primary no-underline hover:no-underline">الخدمات</a></li>
+									<li><a href="{{ page_url('about') }}" class="footer-link text-text-light hover:text-primary no-underline hover:no-underline">من نحن</a></li>
+									<li><a href="{{ page_url('contact') }}" class="footer-link text-text-light hover:text-primary no-underline hover:no-underline">اتصل بنا</a></li>
 								</ul>
 							</div>
 
 							<div>
-								<h3 class="text-xl font-bold mb-6">تواصل معنا</h3>
+								<h3 class="text-3xl text-text font-bold mb-6">تواصل معنا</h3>
 								<ul class="space-y-3">
-									<li class="flex items-center">
-										<i class="fas fa-envelope ml-3 text-purple-400"></i>
-										<span class="text-gray-400">support@yallatake.com</span>
+									<li class="flex gap-5 items-center">
+										<div class="w-6 h-6 flex justify-center text-primary" style="color: var(--primary)">
+											<i class="fas fa-envelope"></i>
+										</div>
+										<span class="text-text-light ml-3">support@yallatake.com</span>
 									</li>
-									<li class="flex items-center">
-										<i class="fab fa-telegram ml-3 text-purple-400"></i>
-										<span class="text-gray-400">@yallatake_support</span>
+									<li class="flex gap-5 items-center">
+										<div class="w-6 h-6 flex justify-center text-primary" style="color: var(--primary)">
+											<i class="fab fa-telegram"></i>
+										</div>
+										<span class="text-text-light ml-3">@yallatake_support</span>
 									</li>
-									<li class="flex items-center">
-										<i class="fas fa-clock ml-3 text-purple-400"></i>
-										<span class="text-gray-400">متاح 24/7</span>
+									<li class="flex gap-5 items-center">
+										<div class="w-6 h-6 flex justify-center text-primary" style="color: var(--primary)">
+											<i class="fas fa-clock"></i>
+										</div>
+										<span class="text-text-light ml-3">متاح 24/7</span>
 									</li>
 								</ul>
 							</div>
 						</div>
 
-						<div class="border-t border-gray-800 mt-12 pt-8 text-center">
-							<p class="text-gray-400">&copy; 2024 {{ site['name'] }}. جميع الحقوق محفوظة.</p>
+						<div class="border-t border-gray-400 mt-12 pt-8 text-center">
+							<p class="text-text font-bold">&copy; 2024 {{ site['name'] }}. جميع الحقوق محفوظة.</p>
 						</div>
 					</div>
 				</footer>
@@ -876,15 +1006,134 @@
 		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 		<script>
 			AOS.init({
-				duration: 600,
-				easing: 'ease-out',
-				once: true
+				duration: 800,
+				easing: 'ease-out-cubic',
+				once: false,
+				mirror: true
 			});
+
+			// Initialize Swiper for testimonials
+			const testimonialsSwiper = new Swiper('.testimonials-slider', {
+				slidesPerView: 1,
+				spaceBetween: 30,
+				loop: true,
+				autoplay: {
+					delay: 5000,
+					disableOnInteraction: false,
+				},
+				pagination: {
+					el: '.testimonial-pagination',
+					clickable: true,
+				},
+				navigation: {
+					nextEl: '.testimonial-next',
+					prevEl: '.testimonial-prev',
+				},
+				breakpoints: {
+					640: {
+						slidesPerView: 1,
+					},
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 20,
+					},
+					1024: {
+						slidesPerView: 3,
+						spaceBetween: 30,
+					},
+				}
+			});
+
+			// Enhanced Statistics Animation
+			function animateNumber(element, target, duration = 2500) {
+				const prefix = element.getAttribute('data-prefix') || '';
+				const suffix = element.getAttribute('data-suffix') || '';
+				const start = 0;
+				const increment = target / (duration / 16);
+				let current = start;
+				
+				const timer = setInterval(() => {
+					current += increment;
+					
+					if (current >= target) {
+						current = target;
+						clearInterval(timer);
+					}
+					
+					let displayValue;
+					if (suffix === 'K') {
+						displayValue = Math.floor(current / 1000);
+					} else if (suffix === 'M') {
+						displayValue = Math.floor(current / 1000000);
+					} else {
+						displayValue = Math.floor(current);
+					}
+					
+					element.textContent = prefix + displayValue + suffix;
+				}, 16);
+			}
+
+			// Function to animate circle progress
+			function animateCircle(circle) {
+				circle.classList.add('animate');
+			}
+
+			// Intersection Observer for triggering animations
+			const observerOptions = {
+				threshold: 0.3,
+				rootMargin: '0px 0px -50px 0px'
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						const container = entry.target;
+						const numberElement = container.querySelector('.stats-number');
+						const circleElement = container.querySelector('.stats-circle-progress');
+						
+						if (numberElement && !numberElement.classList.contains('animated')) {
+							const target = parseInt(numberElement.getAttribute('data-target'));
+							
+							// Add animated class to prevent re-animation
+							numberElement.classList.add('animated');
+							
+							// Start number animation
+							setTimeout(() => {
+								animateNumber(numberElement, target);
+							}, 300);
+							
+							// Start circle animation
+							if (circleElement) {
+								setTimeout(() => {
+									animateCircle(circleElement);
+								}, 100);
+							}
+						}
+						
+						// Unobserve after animation starts
+						observer.unobserve(container);
+					}
+				});
+			}, observerOptions);
 
 			// Simple navbar functionality
 			document.addEventListener('DOMContentLoaded', function() {
+				// Observe all stats containers
+				const statsContainers = document.querySelectorAll('.stats-circle-container');
+				statsContainers.forEach(container => {
+					observer.observe(container.parentElement);
+				});
+
+				// Add stagger effect to circle animations
+				const circles = document.querySelectorAll('.stats-circle-progress');
+				circles.forEach((circle, index) => {
+					circle.style.transitionDelay = `${0.5 + (index * 0.3)}s`;
+				});
+				
 				const mobileToggle = document.querySelector('.mobile-toggle');
 				const mobileMenu = document.querySelector('.mobile-menu');
 				const mobileClose = document.querySelector('.mobile-close');
@@ -951,19 +1200,23 @@
 					});
 				});
 				
-				// Add scroll reveal animations
-				const revealElements = document.querySelectorAll('.service-card, .feature-item');
-				const observer = new IntersectionObserver((entries) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							entry.target.classList.add('animate__animated', 'animate__fadeInUp');
-							observer.unobserve(entry.target);
+				// Enhanced hover effects for service cards
+				const serviceCards = document.querySelectorAll('.service-card');
+				serviceCards.forEach(card => {
+					card.addEventListener('mouseenter', function() {
+						const icon = this.querySelector('.w-16');
+						if (icon) {
+							icon.style.transform = 'scale(1.1) rotate(5deg)';
+							icon.style.transition = 'transform 0.3s ease';
 						}
 					});
-				}, { threshold: 0.1 });
-				
-				revealElements.forEach(el => {
-					observer.observe(el);
+
+					card.addEventListener('mouseleave', function() {
+						const icon = this.querySelector('.w-16');
+						if (icon) {
+							icon.style.transform = 'scale(1) rotate(0deg)';
+						}
+					});
 				});
 			});
 		</script>
