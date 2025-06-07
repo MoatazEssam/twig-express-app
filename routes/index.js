@@ -78,6 +78,16 @@ router.get("/signup", (req, res) => {
 
   renderWithLayout(res, "signup", data);
 });
+router.get("/signin", (req, res) => {
+  const data = {
+    page: {
+      title: "Terms of Service",
+      description: "Terms and conditions for using our SMM panel services",
+    },
+  };
+
+  renderWithLayout(res, "signin", data);
+});
 router.get("/dashboard", (req, res) => {
   const data = {
     page: {
