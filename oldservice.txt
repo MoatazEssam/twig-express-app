@@ -1,0 +1,185 @@
+		<section class="py-20 relative overflow-hidden" style="background:white;" dir="rtl">
+					<div class="container mx-auto px-4 relative">
+						<div class="text-center mb-16" data-aos="fade-up">
+							<h2 class="text-4xl md:text-5xl font-bold text-text mb-6">خدماتنا المميزة</h2>
+							<p class="text-xl font-semibold text-text-light max-w-3xl mx-auto">نقدم مجموعة شاملة من الخدمات لتعزيز حضورك على منصات التواصل الاجتماعي</p>
+						</div>
+
+						<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+							<!-- Instagram Services -->
+							<div class="service-card" data-aos="fade-up" data-aos-delay="100">
+								<div class="text-center mb-6">
+									<div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+										<i class="fab fa-instagram text-white text-2xl"></i>
+									</div>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات انستغرام</h3>
+								</div>
+								<ul class="space-y-3 text-text font-semibold">
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المتابعين
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة الإعجابات
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المشاهدات
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة التعليقات
+									</li>
+								</ul>
+							</div>
+
+							<!-- TikTok Services -->
+							<div class="service-card" data-aos="fade-up" data-aos-delay="200">
+								<div class="text-center mb-6">
+									<div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+										<i class="fab fa-tiktok text-white text-2xl"></i>
+									</div>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات تيك توك</h3>
+								</div>
+								<ul class="space-y-3 text-text font-semibold">
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المتابعين
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة الإعجابات
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المشاهدات
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المشاركات
+									</li>
+								</ul>
+							</div>
+
+							<!-- YouTube Services -->
+							<div class="service-card" data-aos="fade-up" data-aos-delay="300">
+								<div class="text-center mb-6">
+									<div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+										<i class="fab fa-youtube text-white text-2xl"></i>
+									</div>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات يوتيوب</h3>
+								</div>
+								<ul class="space-y-3 text-text font-semibold">
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المشتركين
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المشاهدات
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة الإعجابات
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة التعليقات
+									</li>
+								</ul>
+							</div>
+
+							<!-- Facebook Services -->
+							<div class="service-card" data-aos="fade-up" data-aos-delay="400">
+								<div class="text-center mb-6">
+									<div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+										<i class="fab fa-facebook text-white text-2xl"></i>
+									</div>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات فيسبوك</h3>
+								</div>
+								<ul class="space-y-3 text-text font-semibold">
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المتابعين
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة الإعجابات
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المشاهدات
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المشاركات
+									</li>
+								</ul>
+							</div>
+
+							<!-- Twitter Services -->
+							<div class="service-card" data-aos="fade-up" data-aos-delay="500">
+								<div class="text-center mb-6">
+									<div class="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+										<i class="fab fa-twitter text-white text-2xl"></i>
+									</div>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات تويتر</h3>
+								</div>
+								<ul class="space-y-3 text-text font-semibold">
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المتابعين
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة الإعجابات
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة الريتويت
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة التعليقات
+									</li>
+								</ul>
+							</div>
+
+							<!-- Snapchat Services -->
+							<div class="service-card" data-aos="fade-up" data-aos-delay="600">
+								<div class="text-center mb-6">
+									<div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+										<i class="fab fa-snapchat text-white text-2xl"></i>
+									</div>
+									<h3 class="text-2xl text-text font-extrabold mb-2">خدمات سناب شات</h3>
+								</div>
+								<ul class="space-y-3 text-text font-semibold">
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المتابعين
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة المشاهدات
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										زيادة النقاط
+									</li>
+									<li class="flex items-center">
+										<i class="fas fa-check text-green-400 ml-3"></i>
+										خدمات مخصصة
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="text-center mt-12" data-aos="fade-up" data-aos-delay="700">
+							<a href="{{ page_url('services') }}" class="btn btn-primary btn-hero">
+								<i class="fas fa-arrow-left ml-3"></i>
+								عرض جميع الخدمات
+							</a>
+						</div>
+					</div>
+				</section>

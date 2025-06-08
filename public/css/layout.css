@@ -1528,7 +1528,7 @@ body {
     font-weight: 600;
     border: 2px solid #6b7280;
     background: transparent;
-    color: #d1d5db;
+    color: var(--text);
     text-decoration: none;
     border-radius: 12px;
     transition: all 0.3s ease;
@@ -1536,7 +1536,7 @@ body {
 
 .btn-outline-white:hover {
     background: white;
-    color: black;
+    color: var(--text-light);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
 }
@@ -1560,4 +1560,24 @@ body {
     .service-content .grid {
         grid-template-columns: 1fr;
     }
+}
+.pay-element{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 2px solid var(--text-light);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.pay-element:hover{
+  
+  transform: translateY(-10px);
+  
+  box-shadow: 0 20px 40px rgba(123, 42, 71, 0.15);
 }
